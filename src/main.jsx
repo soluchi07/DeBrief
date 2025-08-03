@@ -10,6 +10,7 @@ import Login from './Routes/Login.jsx'
 import NotFound from './Components/NotFound.jsx'
 import Add from './Routes/Add.jsx'
 import PostDetails from './Routes/DetailsPage.jsx'
+import Edit from './Routes/Edit.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
             <Route index element={<Home/>}/>
             <Route path='/home/add-post' element={<Add/>}/>
             <Route path='/home/:id' element={<PostDetails/>}/>
+            <Route path='/home/edit/:id' element={<Edit/>}/>
           </Route>
           <Route path='/*' element={<NotFound/>}/>
       </Routes>
