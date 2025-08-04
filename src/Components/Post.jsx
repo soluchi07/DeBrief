@@ -52,10 +52,8 @@ const Edit = (e) => {
           <span className="fandom-text">{post.fandom}</span>
           <span className="user-tag">~{post.username}</span>
         </div>
-          {/* <p id="fandom-text"></p> */}
           <div className="tags">
             {post.spoiler &&
-              // <div id="spoiler">SPOILER⚠️</div>
               <span className="spoiler-tag">SPOILER⚠</span>
             }
 
@@ -84,9 +82,7 @@ const Edit = (e) => {
             {post.likes} {post.likes == 1 ? "Like" : "Likes"}
           </p>
           { isCreator &&
-            // <Link to={`/home/edit/${post.id}`} onClick={(e) => e.stopPropagation()}>
               <button onClick={Edit}>Edit📝</button> 
-            // <Link/>
           }
             </Link>
       </div> :      

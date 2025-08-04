@@ -3,6 +3,7 @@ import logo_light from '../assets/logo_light.png'
 import logo_dark from '../assets/logo_dark.png'
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
+import { supabase } from '../../client';
 
 
 export default function SmallBanner({theme, setTheme}) {
