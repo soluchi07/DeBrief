@@ -26,15 +26,66 @@
 }
 
 .sidebar-nav {
-  flex: 1;
-  padding: 1rem 0;
-  z-index: 0;
+    flex: 1;
+    padding: 1rem 0;
+    z-index: 0;
+    height: 20%;
 }
 
 .nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.fandoms{
+    background-color: var(--primary);
+    padding: 0.75rem 1rem;
+    color: var(--background);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    border: 2px solid var(--secondary);
+
+}
+
+.fandoms:hover {
+  background-color: var(--accent);
+  color: var(--text);
+  border-radius: 10px;
+  transform: translateX(4px);
+  cursor: default;
+}
+
+.sidebar-fandoms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    flex-direction: column;
+
+}
+
+.sidebar-fandoms h5{
+    margin-bottom: 0;
+    /* text-decoration: underline; */
+    color: var(--text)
+}
+
+.sidebar-fandoms h5:hover{
+    color: var(--primary);
+    cursor:default;
+}
+
+.sidebar-nav-fandoms{
+    height: 100%;
 }
 
 .nav-item {
@@ -212,7 +263,7 @@
 
 /* Dark theme specific adjustments */
 :root[data-theme="dark"] .sidebar {
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 0 5px var(--secondary)
 }
 
 :root[data-theme="light"] .sidebar {

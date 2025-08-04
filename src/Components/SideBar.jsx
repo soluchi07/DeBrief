@@ -6,8 +6,9 @@ import pfp from '../assets/profile-photo.png'
 import home from '../assets/home.png'
 
 const SideBar = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [username, setUserName] = useState('')
+  const [fandoms, setFandoms] = useState(null);
 
   const navItems = [
     {
@@ -42,20 +43,40 @@ const SideBar = () => {
   ];
 
   useEffect(() => {
-    const fetchUser = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('username')
-    .eq('id', user.id)
-    .single(); 
-    setUserName(profile.username) 
+    const fetchUsername = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('username')
+      .eq('id', user.id)
+      .single(); 
+      setUserName(profile.username) 
 
-    if (profileError){
-      console.error(profileError)
+      if (profileError){
+        console.error(profileError)
+      }
     }
-  }
-    fetchUser();
+
+    const fetchFandoms = async () => {
+      const { data } = await supabase
+      .from('Posts')
+      .select('fandom')
+
+      // console.log(data)
+      let arr = []
+
+      for (const obj of data){
+        if (!arr.includes(obj.fandom)){
+          arr.push(obj.fandom)
+        }
+      }
+      console.log(arr)
+      setFandoms(arr)
+    }
+      fetchUsername();
+      fetchFandoms();
+
+    
   }, [])
 
   return (
@@ -64,20 +85,33 @@ const SideBar = () => {
         <h2 className="sidebar-title">Navigation</h2>
       </div>
       
-      <nav className="sidebar-nav">
-        <ul className="nav-list">
-          {navItems.map((item, index) => (
-            <li key={index} className="nav-item">
-              <Link 
-                to={item.path} 
-                className={`nav-link ${item.label === 'Home' ? 'active' : ''}`}
-              >
-                <span className="nav-icon">{item.icon}</span>
-                <span className="nav-label">{item.label}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+  
+      <nav className="sidebar-nav-fandoms">
+        <div className='sidebar-nav'>
+          <ul className="nav-list">
+            {navItems.map((item, index) => (
+              <li key={index} className="nav-item">
+                <Link 
+                  to={item.path} 
+                  className={`nav-link ${item.label === 'Home' ? 'active' : ''}`}
+                >
+                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-label">{item.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="sidebar-fandoms">
+          <h5>Our Fandoms</h5>
+            <ul className="nav-list">
+            {fandoms && fandoms.map((item, index) => (
+              <li key={index} className="nav-item fandoms">
+                  <span className="nav-label">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
 
       <div className="sidebar-footer">
