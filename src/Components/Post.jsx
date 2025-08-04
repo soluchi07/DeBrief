@@ -3,36 +3,8 @@ import { supabase } from '../../client'
 import { Link } from "react-router-dom"
   
 
-export default function Post({post}) {
-  const [isCreator , setIsCreator] = useState(null)
-
-  useEffect( () => {
-    try{
-    const fetchUsername = async () =>{
-      const { data: { user } } = await supabase.auth.getUser();
-      const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('username')
-      .eq('id', user.id)
-      .single();
-
-
-       if (profileError || !profile) {
-        setIsCreator(false);
-        return;
-      }
-
-      setIsCreator(profile?.username === post.username)
-      // console.log(profile.username)
-      }
-
-    fetchUsername();      
-    }catch (error) {
-      console.error('Error checking creator status:', error);
-      setIsCreator(false);
-    }
-
-}, [])
+export default function Post({post, isCreator}) {
+  
 
 const Edit = (e) => {
   e.stopPropagation();
@@ -44,7 +16,6 @@ const Edit = (e) => {
 
   return (
     <>
-    {isCreator != null ? 
     
     <div className="post-card">
       <Link to={`/home/${post.id}`}>
@@ -85,16 +56,8 @@ const Edit = (e) => {
               <button onClick={Edit}>Edit📝</button> 
           }
             </Link>
-      </div> :      
-      <div className="post-details-overlay">
-        <div className="post-details-modal">
-          <div className="loading-spinner">
-            <div className="spinner"></div>
-            <p>Loading page...</p>
-          </div>
-        </div>
-      </div>
-      }
+      </div>   
+      
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../../client';
+import { Link } from 'react-router-dom';
 
 export default function PostActions({post, setPost, id}) {
     const [isLiked, setIsLiked] = useState(false);
@@ -62,6 +63,9 @@ export default function PostActions({post, setPost, id}) {
               </svg>
               <span>Share</span>
             </button>
+            <Link to={`/home/edit/${id}`}>
+              <button className="action-button">Edit📝</button>
+            </Link>
     </div>
   )
 }

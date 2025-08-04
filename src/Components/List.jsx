@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 export default function List() {
     const [posts, setPosts] = useState(null)
+    const [authUsername, setAuthUserName] = useState('')
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -13,10 +14,20 @@ export default function List() {
             .select()
             .order('created_at', { ascending: false })
             //TODO add sort on top that ONLY sorts by time. pass the sort prop here and use it as the ascending value
-
-            // set state of posts
+            
             setPosts(data)
-            // console.log(data)
+
+            const { data: { user } } = await supabase.auth.getUser();
+            const { data: profile, error: profileError } = await supabase
+            .from('profiles')
+            .select('username')
+            .eq('id', user.id)
+            .single(); 
+            setAuthUserName(profile.username)  
+            
+            if (profileError || !profile) {
+                console.error(profileError);
+            } 
         }
 
         fetchPost();
@@ -24,16 +35,18 @@ export default function List() {
 
 
     return (
-            posts && posts.length > 0?
+            posts && posts.length > 0 ?
                 (posts.map((item) => {
                     return(
-                        <Post key={item.id} post={item}/>
+                        <Post key={item.id} isCreator={authUsername === item.username} post={item}/>
                     )
 
                 }))    
             :
-            <>
-            </>
+            <div className="loading-spinner">
+                <div className="spinner"></div>
+                <p>Loading page...</p>
+            </div>
             
         
     )

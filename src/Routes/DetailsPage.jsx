@@ -37,14 +37,14 @@ function DetailsPage() {
 
   if (isLoading) {
     return (
-      <div className="post-details-overlay">
-        <div className="post-details-modal">
+      // <div className="post-details-overlay">
+      //   <div className="post-details-modal">
           <div className="loading-spinner">
             <div className="spinner"></div>
             <p>Loading post...</p>
           </div>
-        </div>
-      </div>
+      //   </div>
+      // </div>
     );
   }
 
