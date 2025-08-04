@@ -36,7 +36,7 @@ const HomeUtilities = ({ onSearch, onSortChange, onSpoilerFilter }) => {
         <div className="search-input-wrapper">
           <input
             type="text"
-            placeholder="Search posts by title..."
+            placeholder="Search posts by title or fandom..."
             value={searchTerm}
             onChange={handleSearchChange}
             className="search-input"

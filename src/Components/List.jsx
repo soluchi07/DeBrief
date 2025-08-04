@@ -62,7 +62,7 @@ export default function List({ searchTerm, sortBy, hideSpoilers }) {
     // 1. Filter by search term (title)
     if (searchTerm && searchTerm.trim()) {
       filtered = filtered.filter(post =>
-        post.title?.toLowerCase().includes(searchTerm.toLowerCase().trim())
+        post.title?.toLowerCase().includes(searchTerm.toLowerCase().trim()) || post.fandom?.toLowerCase().includes(searchTerm.toLowerCase().trim())
       );
     }
 

@@ -19,6 +19,7 @@ export default function Edit() {
   
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
   const [isOwner, setIsOwner] = useState(false);
 
@@ -110,6 +111,36 @@ export default function Edit() {
         ...prev,
         [name]: type === 'checkbox' ? checked : value
       }));
+    }
+  };
+
+  const handleDelete= async (e) => {
+    e.preventDefault();
+    if (!isOwner) return;
+    
+    setIsDeleting(true);
+    setMessage({ type: '', text: '' });
+
+    try {
+      const { error } = await supabase
+        .from('Posts')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+      
+      setMessage({ type: 'error', text: 'Post Deleted' });
+      
+      // Redirect back to the post or home page after a delay
+      setTimeout(() => {
+        navigate(`/home`);
+      }, 1500);
+
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      setMessage({ type: 'error', text: 'There was an error deleting the post' });
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -549,6 +580,37 @@ export default function Edit() {
               }}
             >
               Cancel
+            </button>
+            <button type="delete"
+              onClick={handleDelete}
+              disabled={isDeleting || !formData.title}
+              style={{
+                padding: '0.75rem 2rem',
+                borderRadius: '8px',
+                fontWeight: '600',
+                fontSize: '1rem',
+                cursor: isSubmitting || !formData.title ? 'not-allowed' : 'pointer',
+                transition: 'all 0.3s ease',
+                border: 'none',
+                backgroundColor: 'red',
+                color: 'white',
+                opacity: isSubmitting || !formData.title ? 0.6 : 1
+              }}
+              onMouseEnter={(e) => {
+                if (!isSubmitting && formData.title) {
+                  e.target.style.backgroundColor = 'var(--accent)';
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isSubmitting && formData.title) {
+                  e.target.style.backgroundColor = 'red';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = 'none';
+                }
+              }}>
+              {isSubmitting ? 'Deleting...' : 'Delete Post'}
             </button>
             <button 
               type="submit"
