@@ -23,8 +23,7 @@ export default function Post({post}) {
       }
 
       setIsCreator(profile?.username === post.username)
-      console.log(profile.username)
-      console.log('here')
+      // console.log(profile.username)
       }
 
     fetchUsername();      
@@ -35,10 +34,18 @@ export default function Post({post}) {
 
 }, [])
 
+const Edit = (e) => {
+  e.stopPropagation();
+  e.preventDefault();
+  window.location = `/home/edit/${post.id}`
+
+}
+
 
   return (
     <>
     {isCreator != null ? 
+    
     <div className="post-card">
       <Link to={`/home/${post.id}`}>
         <div className="post-metadata">
@@ -77,19 +84,21 @@ export default function Post({post}) {
             {post.likes} {post.likes == 1 ? "Like" : "Likes"}
           </p>
           { isCreator &&
-          <button>Edit📝</button> 
+            // <Link to={`/home/edit/${post.id}`} onClick={(e) => e.stopPropagation()}>
+              <button onClick={Edit}>Edit📝</button> 
+            // <Link/>
           }
-        </Link>
-      </div> :
+            </Link>
+      </div> :      
       <div className="post-details-overlay">
         <div className="post-details-modal">
           <div className="loading-spinner">
             <div className="spinner"></div>
-            <p>Loading post...</p>
+            <p>Loading page...</p>
           </div>
         </div>
       </div>
       }
-      </>
+    </>
   )
 }

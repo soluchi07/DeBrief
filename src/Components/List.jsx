@@ -25,10 +25,12 @@ export default function List() {
 
     return (
             posts && posts.length > 0?
-                    (posts.map((item) => {
-                        return <Post key={item.id} post={item}/>
+                (posts.map((item) => {
+                    return(
+                        <Post key={item.id} post={item}/>
+                    )
 
-                    }))    
+                }))    
             :
             <>
             </>
