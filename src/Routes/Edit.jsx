@@ -155,26 +155,9 @@ export default function Edit() {
   // Loading state
   if (isLoading) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--background)',
-        color: 'var(--text)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            border: '3px solid var(--secondary)',
-            borderTop: '3px solid var(--primary)',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 1rem'
-          }}></div>
-          <p>Loading post data...</p>
-        </div>
+      <div className="loading-spinner">
+        <div className="spinner"></div>
+        <p>Loading post data...</p>
       </div>
     );
   }

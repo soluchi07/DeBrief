@@ -37,21 +37,32 @@ const Edit = (e) => {
             }
           </div>
         
-          <h2>{post.title}</h2>
-          {post.description &&
-          <div className="post-description">{post.description.length < 200? post.description: (post.description.slice(0,128)+ '...') }</div>}
-          <p style={
-            {
-            width: 'fit-content',
-            borderRadius: '10px',
-            color: 'var(--primary)',
-            padding: '5px',
-            fontSize: '12px',
-            border: '1px solid var(--primary)'
-            }}
-          >
-            {post.likes} {post.likes == 1 ? "Like" : "Likes"}
-          </p>
+          <h2 style={{margin: '5px'}}>{post.title}</h2>
+          
+          <div className="post-metadata">
+            <p style={
+              {
+              width: 'fit-content',
+              borderRadius: '10px',
+              color: 'var(--primary)',
+              padding: '5px',
+              fontSize: '12px',
+              border: '1px solid var(--primary)'
+              }}
+            >
+              {post.likes} {post.likes == 1 ? "Like" : "Likes"}
+            </p>
+            <span className="user-tag">
+              {new Date(post.created_at).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+                })
+              }
+            </span>
+          </div>
           { isCreator &&
               <button onClick={Edit}>Edit📝</button> 
           }

@@ -20,7 +20,7 @@ export default function SmallBanner({theme, setTheme}) {
   };
 
   return (
-        <nav>
+        <nav className='small-banner'>
             <img
                 src={theme === 'light' ? logo_light : logo_dark} 
                 alt="debrief logo"

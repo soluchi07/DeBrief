@@ -19,7 +19,7 @@ export default function PostDetails({post}) {
       <div className="post-meta" >
             <div className="post-info">
               <span className="fandom-tag">{post.fandom}</span>
-              {post.spoiler && <span className="spoiler-warning">⚠️ Spoiler</span>}
+              {post.spoiler && <span className="spoiler-warning">SPOILER⚠</span>}
             </div>
             <div className="post-episode-info">
               {!post.ismovie && post.season && post.episode && (
