@@ -6,7 +6,6 @@ import '../App.css'
 
 
 export default function LargeBanner({theme, setTheme}) {
-    // TODO remove the outside div in large banners and make the nav the only outer element
     
   return (
         <nav>

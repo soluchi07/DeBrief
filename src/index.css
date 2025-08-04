@@ -85,7 +85,7 @@ button:focus-visible {
   --background: #ffffff;
   --primary: #56a8d7;
   --secondary: #ababab;
-  --accent: #c27100;
+  --accent: #ffae3d;
 }
 
 :root[data-theme="dark"] {

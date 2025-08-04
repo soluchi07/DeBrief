@@ -6,9 +6,9 @@ export default function Home() {
 
   return (
     <>
-        {/* <button onClick={handleLogout}>Logout</button> */}
         <List/>
+        {/* TODO add search bar here*/}
+        {/* add spoiler filter with season and episode number filters */}
     </>
-      //  TODO  make menu on hover of profile photo*
   )
 }

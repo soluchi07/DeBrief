@@ -25,7 +25,6 @@ export default function SmallBanner({theme, setTheme}) {
                 src={theme === 'light' ? logo_light : logo_dark} 
                 alt="debrief logo"
             />
-            {/* TODO add search bar here and notifications button, default bell icon for no noti*/}
             <button onClick={handleLogout}>Logout</button>
             <div className="theme-toggle-container">
                 <ThemeToggle theme={theme} setTheme={setTheme} />
