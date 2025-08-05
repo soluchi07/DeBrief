@@ -80,7 +80,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+While building this React/Supabase app, the main challenges likely included managing authentication state and Row Level Security policies to ensure proper user permissions, implementing complex filtering/sorting functionality while balancing client-side vs server-side performance, creating a responsive UI with theme switching and collapsible sidebar, debugging Supabase-specific issues like case-sensitive table names and query syntax, handling async operations safely (especially avoiding null/undefined errors like with the spread operator), setting up proper error handling and loading states for CRUD operations, and integrating React Router with protected routes while maintaining real-time data synchronization across components. Handling the styling was also a problem as always.
 
 ## License
 
