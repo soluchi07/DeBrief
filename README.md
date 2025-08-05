@@ -48,9 +48,6 @@ The following **optional** features are implemented:
 - [x] Web app implements authentication
   - Only the original user author of a post can update or delete it. Web app doesn't allow unauthorized
     post update or deletion even when edit url is hardcoded into the address bar
-- [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post
-  - Users can repost a previous post by referencing its post ID
-  - On the post page of the new post, the referenced post is displayed and linked, creating a thread
 - [x] Users can customize the interface
   - Users can toggle dark mode with the icon in the dark corner
 - [x] Users can add more characterics to their posts
