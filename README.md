@@ -68,30 +68,28 @@ Here's a walkthrough of various aspects of the project:
 
 ### Page Screenshots
 
-<img src='./landing-page.png' title='Landing Page' width='50%' alt='Landing Page' /> <img src='./signin-page.png' title='Sign-in Page' width='50%' alt='Sign-in Page' /> 
+<img src='./landing-page.png' title='Landing Page' width='50%' alt='Landing Page' /><img src='./signin-page.png' title='Sign-in Page' width='50%' alt='Sign-in Page' /> 
 
 ### Home Page functionality
 
-<img src='./home-page.gif' title='Landing Page' width='50%' alt='Home Page' />
+<img src='./home-page.gif' title='Landing Page' width='' alt='Home Page' />
 
 ### Adding Posts
 
-<img src='./add-post.gif' title='Landing Page' width='50%' alt='Add Post' />
+<img src='./add-post.gif' title='Landing Page' width='' alt='Add Post' />
 
 ### Authentication
 
-<img src='./authorization.gif' title='Landing Page' width='50%' alt='Login before access' />
-<img src='./authorized-edits-only.gif' title='Landing Page' width='50%' alt="Cannot edit other users' posts"/>
+<img src='./authorization.gif' title='Landing Page' width='50%' alt='Login before access' /><img src='./authorized-edits-only.gif' title='Landing Page' width='50%' alt="Cannot edit other users' posts"/>
 
 
 ### Editing Posts
 
-<img src='./edit-post.gif' title='Landing Page' width='50%' alt='Edit POsts' />
+<img src='./edit-post.gif' title='Landing Page' width='' alt='Edit POsts' />
 
 ### Deletion and Other Post interactions
 
-<img src='./like-function.gif' width='50%' alt='Landing Page' />
-<img src='./more-w-posts.gif' width='50%' alt='Post interactions and Deletion' />
+<img src='./like-function.gif' width='50%' alt='Landing Page' /><img src='./more-w-posts.gif' width='50%' alt='Post interactions and Deletion' />
 
 
 
