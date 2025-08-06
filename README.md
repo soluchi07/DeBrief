@@ -68,7 +68,8 @@ Here's a walkthrough of various aspects of the project:
 
 ### Page Screenshots
 
-<img src='./landing-page.png' title='Landing Page' width='50%' alt='Landing Page' /><img src='./signin-page.png' title='Sign-in Page' width='50%' alt='Sign-in Page' /> 
+<img src='./landing-page.png' title='Landing Page' width='' alt='Landing Page' />
+<img src='./signin-page.png' title='Sign-in Page' width='' alt='Sign-in Page' /> 
 
 ### Home Page functionality
 
@@ -80,7 +81,8 @@ Here's a walkthrough of various aspects of the project:
 
 ### Authentication
 
-<img src='./authorization.gif' title='Landing Page' width='50%' alt='Login before access' /><img src='./authorized-edits-only.gif' title='Landing Page' width='50%' alt="Cannot edit other users' posts"/>
+<img src='./authorization.gif' title='Landing Page' width='' alt='Login before access' />
+<img src='./authorized-edits-only.gif' title='Landing Page' width='' alt="Cannot edit other users' posts"/>
 
 
 ### Editing Posts
@@ -89,7 +91,8 @@ Here's a walkthrough of various aspects of the project:
 
 ### Deletion and Other Post interactions
 
-<img src='./like-function.gif' width='50%' alt='Landing Page' /><img src='./more-w-posts.gif' width='50%' alt='Post interactions and Deletion' />
+<img src='./like-function.gif' width='' alt='Landing Page' />
+<img src='./more-w-posts.gif' width='' alt='Post interactions and Deletion' />
 
 
 
