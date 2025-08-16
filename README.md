@@ -1,124 +1,100 @@
-# Web Development Final Project - *DeBrief*
+# DeBrief – Fandom Social Media Web App
 
-Submitted by: **Soluchi Fidel-Ibeabuchi**
+**Author:** Soluchi Fidel-Ibeabuchi
+**Role:** Developer | Computer Science Student @ Howard University
 
-This web app: **A modern fandom-focused social media platform built with React and Supabase. Share posts about your favorite TV shows, movies, and fandoms with episode-specific discussions, spoiler warnings, and community interactions.**
+DeBrief is a **modern fandom-focused social platform** built with **React, Supabase, and Tailwind CSS**. It allows users to share posts about TV shows, movies, and fandoms with **episode-specific discussions, spoiler tagging, authentication, and community-driven interactions**.
 
-Time spent: **10** hours spent in total
+This project was developed as my **final submission for a Web Development course**, and demonstrates my ability to design and implement **full-stack applications with authentication, CRUD functionality, and responsive UI/UX.** Deployed on Netlify at 'https://debrief.netlify.app/'
 
-## Required Features
+---
 
-The following **required** functionality is completed:
+## 🚀 Features
 
+### Core Functionality
 
-- [x] **Web app includes a create form that allows the user to create posts**
-  - Form requires users to add a post title
-  - Forms should have the *option* for users to add: 
-    - additional textual content
-    - an image added as an external image URL
-- [x] **Web app includes a home feed displaying previously created posts**
-  - Web app must include home feed displaying previously created posts
-  - By default, each post on the posts feed should show only the post's:
-    - creation time
-    - title 
-    - upvotes count
-  - Clicking on a post should direct the user to a new page for the selected post
-- [x] **Users can view posts in different ways**
-  - Users can sort posts by either:
-    -  creation time
-    -  upvotes count
-  - Users can search for posts by title
-- [x] **Users can interact with each post in different ways**
-  - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
-    - content
-    - image
-    - comments
-  - Users can leave comments underneath a post on the post page
-  - Each post includes an upvote button on the post page. 
-    - Each click increases the post's upvotes count by one
-    - Users can upvote any post any number of times
+* **Post Creation:** Users can create posts with a title, optional text, and image URL.
+* **Dynamic Feed:** Home feed displays all posts with creation time, title, and upvotes.
+* **Sorting & Search:** Users can sort posts by creation time or upvotes, and search by title.
+* **Post Pages:** Each post has its own page with detailed content, images, comments, and interactions.
+* **User Interaction:** Users can comment and upvote posts, with real-time updates.
+* **Edit/Delete:** Authors can edit or delete their own posts.
 
-- [x] **A post that a user previously created can be edited or deleted from its post pages**
-  - After a user creates a new post, they can go back and edit the post
-  - A previously created post can be deleted from its post page
+### Extended Functionality
 
-The following **optional** features are implemented:
+* **Authentication:** Secure email/password authentication with Supabase.
+* **Authorization:** Row-Level Security ensures only post authors can edit/delete.
+* **Spoiler Control:** Posts can be flagged for spoilers and tagged with season/episode.
+* **Filters:** Users can filter posts by spoiler flags for safe browsing.
+* **Dark Mode:** Customizable light/dark theme toggle.
+* **Loading States:** Smooth loading animations while fetching data.
+* **Sidebar Navigation:** Quick access to fandoms, homepage, and post history.
 
+---
 
-- [x] Web app implements authentication
-  - Only the original user author of a post can update or delete it. Web app doesn't allow unauthorized
-    post update or deletion even when edit url is hardcoded into the address bar
-- [x] Users can customize the interface
-  - Users can toggle dark mode with the icon in the dark corner
-- [x] Users can add more characterics to their posts
-  - Users can set spoiler flag and specifiy the season or episode (or none if its a movie) while creating a post
-  - Users can filter posts by spoiler flag on the home feed
-- [x] Web app displays a loading animation whenever data is being fetched
+## 🛠️ Tech Stack
 
-The following **additional** features are implemented:
+* **Frontend:** React, React Router
+* **Backend & Database:** Supabase (Postgres, RLS policies, Authentication)
+* **Hosting/Deployment:** Netlify
+* **Version Control:** Git/GitHub
 
-* [x] Web app uses real user authentication using email and password
-* [x] Current fandoms can be seen in the sidebar
-* [x] The Home button takes users back to the homepage
-* [x] The "My Posts" button isn't functional but it's meant to filter out posts that aren't owned by the user
+---
 
-## Video Walkthrough
+## 📸 Demo & Walkthrough
 
-Here's a walkthrough of various aspects of the project:
+### Screenshots
 
-### Page Screenshots
+<img src='./landing-page.png' alt='Landing Page' />  
+<img src='./signin-page.png' alt='Sign-in Page' />  
 
-<img src='./landing-page.png' title='Landing Page' width='' alt='Landing Page' />
-<img src='./signin-page.png' title='Sign-in Page' width='' alt='Sign-in Page' /> 
+### Core Functionality in Action
 
-### Home Page functionality
+* **Home Page:**
 
-<img src='./home-page.gif' title='Landing Page' width='' alt='Home Page' />
+  <img src='./home-page.gif' alt='Home Page' />  
 
-### Adding Posts
+* **Adding Posts:**
 
-<img src='./add-post.gif' title='Landing Page' width='' alt='Add Post' />
+  <img src='./add-post.gif' alt='Add Post' />  
 
-### Authentication
+* **Authentication & Authorization:**
 
-<img src='./authorization.gif' title='Landing Page' width='' alt='Login before access' />
-<img src='./authorized-edits-only.gif' title='Landing Page' width='' alt="Cannot edit other users' posts"/>
+  <img src='./authorization.gif' alt='Login Required' />  
 
+<img src='./authorized-edits-only.gif' alt='Edit Restrictions' />  
 
-### Editing Posts
+* **Editing & Deleting:**
 
-<img src='./edit-post.gif' title='Landing Page' width='' alt='Edit POsts' />
+  <img src='./edit-post.gif' alt='Edit Post' />  
 
-### Deletion and Other Post interactions
+<img src='./more-w-posts.gif' alt='Post Deletion & Interactions' />  
 
-<img src='./like-function.gif' width='' alt='Landing Page' />
-<img src='./more-w-posts.gif' width='' alt='Post interactions and Deletion' />
+---
 
+## ⚡ Challenges & Learnings
 
+During development, I strengthened my skills in:
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with screentogif
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+* **Authentication & Security:** Implemented RLS policies to enforce data ownership and prevent unauthorized access.
+* **State Management:** Balanced client-side vs. server-side rendering for efficient filtering and sorting.
+* **Async Handling:** Debugged Supabase queries, managed loading states, and avoided null/undefined errors.
+* **UI/UX:** Designed responsive layouts with dark mode and intuitive navigation.
+* **Routing & Data Flow:** Integrated React Router with protected routes while ensuring smooth user experience.
 
-## Notes
+This project highlighted the importance of **secure coding practices, scalable database design, and user-centric features** in modern web apps.
 
-While building this React/Supabase app, the main challenges likely included managing authentication state and Row Level Security policies to ensure proper user permissions, implementing complex filtering/sorting functionality while balancing client-side vs server-side performance, creating a responsive UI with theme switching and collapsible sidebar, debugging Supabase-specific issues like case-sensitive table names and query syntax, handling async operations safely (especially avoiding null/undefined errors like with the spread operator), setting up proper error handling and loading states for CRUD operations, and integrating React Router with protected routes while maintaining real-time data synchronization across components. Handling the styling was also a problem as always.
+---
 
-## License
+## 📚 Key Takeaways
 
-    Copyright 2025 Soluchi Fidel-Ibeabuchi
+* Built and deployed a **production-ready full-stack web application** with about **10 registered users** as a solo developer.
+* Applied **industry-standard tools** (React, Supabase) to solve real-world problems.
+* Gained hands-on experience with **authentication, CRUD operations, and state management**.
+* Strengthened **problem-solving, debugging, and UI/UX design skills**.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+---
 
-        http://www.apache.org/licenses/LICENSE-2.0
+## 📄 License
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Apache 2.0 License © 2025 Soluchi Fidel-Ibeabuchi
