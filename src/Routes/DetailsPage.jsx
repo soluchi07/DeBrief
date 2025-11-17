@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import './PostDetails.css';
 import { useParams } from 'react-router-dom';
 import { supabase } from '../../client';
 import PostDetails from '../Components/PostDetails';
@@ -7,7 +6,6 @@ import PostActions from '../Components/PostActions';
 import CommentForm from '../Components/CommentForm';
 import CommentList from '../Components/CommentList';
 
-//style={{border: '2px solid red'}}
 
 function DetailsPage() {
   const [post, setPost] = useState(null);
